@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class ClubResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @return array<string, mixed>
+     */
+    public function toArray(Request $request): array
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'mobile' => $this->mobile,
+            'img' => $this->img ? url('storage/' . $this->img) : null,
+            'lng' => $this->lng,
+            'lat' => $this->lat,
+            'location' => $this->location,
+            'start_time' => $this->start_time,
+            'end_time' => $this->end_time,
+            'city' => $this->city ? $this->city->name : null,
+            'country' => $this->country ? $this->country->name : null,
+            'currency' => $this->country && $this->country->currency ? [
+                'name' => $this->country->currency->name,
+                'code' => $this->country->currency->code,
+                'symbol' => $this->country->currency->symbol,
+                'exchange_rate' => $this->country->currency->exchange_rate,
+            ] : null,
+        ];
+    }
+}
