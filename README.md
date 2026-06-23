@@ -192,6 +192,11 @@ php artisan storage:link
 - Restrict direct access to maintenance utility routes in production
 - Use HTTPS and secure cookie/session settings
 
+## 📬 Contact
+For any questions or concerns, please contact us at [abdotaher093@gmail.com](mailto:abdotaher093@gmail.com).
+
+## Developed by [عبدالرحمن طاهر](https://abdotaher.me/) — Laravel & Database Developer.
+
 ## License
 
 This project is provided under the MIT License unless your organization policy specifies otherwise.
